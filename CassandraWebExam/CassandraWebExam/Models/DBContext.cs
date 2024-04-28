@@ -34,6 +34,26 @@ namespace CassandraWebExam.Models
             return userMailPasswordModels;
         }
 
+        public bool LoginUser(LoginModels loginModels)
+        {
+            var resultprepare = _session.Prepare("SELECT * FROM my_keyspace.users WHERE email = ? AND password = ? ALLOW FILTERING");
+
+            var boundStatement = resultprepare.Bind(loginModels.email, loginModels.password);
+
+            var rs = _session.Execute(boundStatement);
+
+            var row = rs.FirstOrDefault();
+
+            if (row != null)
+            {
+                return true;
+            }
+            else
+                return false;
+
+
+        }
+
         
     }
 }
