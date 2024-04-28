@@ -42,7 +42,24 @@ public class HomeController : Controller
         }
         return View();
     }
-    
+    [HttpGet]
+    public IActionResult UserAdd()
+    {
+        return View();
+    }
+    [HttpPost]
+    public IActionResult UserAdd(UserModel userModel)
+    {
+        var bools = _context.UserAdd(userModel);
+        if (!bools)
+        {
+            TempData["Fail"] = "Bu kullanıcı zaten var";
+            return View();
+        }
+
+        return RedirectToAction("UserPanel");
+    }
+   
 
 }
 

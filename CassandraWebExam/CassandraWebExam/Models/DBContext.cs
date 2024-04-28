@@ -54,7 +54,28 @@ namespace CassandraWebExam.Models
 
         }
 
-        
+        public bool UserAdd(UserModel userModel)
+        {
+            var resultprepare = _session.Prepare("SELECT * FROM my_keyspace.users WHERE username = ? ALLOW FILTERING");
+
+            var boundStatement = resultprepare.Bind(userModel.Name);
+
+            var rs = _session.Execute(boundStatement);
+
+            var row = rs.FirstOrDefault();
+
+            if (row != null)
+                return false;
+
+
+            _session.Execute($@"insert into my_keyspace.users  (id, username, password , age , email , address)
+                              values ({Guid.NewGuid()}, '{userModel.Name}', '{userModel.password}',
+                              {userModel.Age}, '{userModel.email}' , '{userModel.address}')");
+
+            return true;
+        }
+
+       
     }
 }
 
