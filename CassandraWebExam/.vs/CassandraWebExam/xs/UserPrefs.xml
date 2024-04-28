@@ -1,0 +1,41 @@
+﻿<Properties StartupConfiguration="{C58395A1-B558-41F4-A5CB-D154669ABA1D}|https">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/beyzakutuk/Desktop/C#/Cassandra/CassandraWebExam/CassandraWebExam/Controllers/HomeController.cs" relfile="CassandraWebExam/Controllers/HomeController.cs" line="70" column="1" />
+      <Breakpoint file="/Users/beyzakutuk/Desktop/C#/Cassandra/CassandraWebExam/CassandraWebExam/Models/DBContext.cs" relfile="CassandraWebExam/Models/DBContext.cs" line="83" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.CassandraWebExam PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="CassandraWebExam/Models/DBContext.cs">
+    <Files>
+      <File FileName="CassandraWebExam/Controllers/HomeController.cs" Line="70" Column="1" />
+      <File FileName="CassandraWebExam/Views/Home/UserAdd.cshtml" Line="58" Column="30" />
+      <File FileName="CassandraWebExam/Models/UserModel.cs" Line="1" Column="1" />
+      <File FileName="CassandraWebExam/Models/DBContext.cs" Line="81" Column="1" />
+      <File FileName="CassandraWebExam/Views/Home/UserPanel.cshtml" Line="80" Column="71" />
+      <File FileName="CassandraWebExam/Views/Home/UserDelete.cshtml" Line="6" Column="21" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="CassandraWebExam" expanded="True">
+            <Node name="CassandraWebExam" expanded="True">
+              <Node name="Dependencies" expanded="True" />
+              <Node name="Controllers" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="DBContext.cs" selected="True" />
+              </Node>
+              <Node name="Properties" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Home" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+</Properties>
