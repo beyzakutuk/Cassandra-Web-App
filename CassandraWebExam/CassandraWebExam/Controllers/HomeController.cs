@@ -32,6 +32,16 @@ public class HomeController : Controller
 
         return View();
     }
+    [HttpGet]
+    public IActionResult UserPanel()
+    {
+        var response = _context.UserList();
+        if (response.Any())
+        {
+            return View(response);
+        }
+        return View();
+    }
     
 
 }
