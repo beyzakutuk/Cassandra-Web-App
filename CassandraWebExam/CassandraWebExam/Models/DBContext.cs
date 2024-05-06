@@ -95,7 +95,27 @@ namespace CassandraWebExam.Models
             return true;
         }
 
-       
+        public bool UserUpdate(UserUpdateModels userUpdateModels)
+        {
+            var selectStatement = new SimpleStatement("SELECT * FROM my_keyspace.users WHERE username = ? ALLOW FILTERING");
+
+
+            selectStatement.Bind(userUpdateModels.Name);
+
+            var resultSet = _session.Execute(selectStatement);
+
+
+            Guid deletedUserId = resultSet.First().GetValue<Guid>("id");
+
+
+
+            var updateStatement = new SimpleStatement("UPDATE my_keyspace.users SET age = ? WHERE id = ?");
+
+            updateStatement.Bind(Convert.ToInt32(userUpdateModels.Age), deletedUserId);
+
+            _session.Execute(updateStatement);
+            return true;
+        }
     }
 }
 

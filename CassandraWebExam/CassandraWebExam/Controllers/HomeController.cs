@@ -79,7 +79,17 @@ public class HomeController : Controller
         return View();
     }
 
-    
+    [HttpGet]
+    public IActionResult UserUpdate()
+    {
+        return View();
+    }
+    [HttpPost]
+    public IActionResult UserUpdate(UserUpdateModels userUpdateModels)
+    {
+        var returnBool = _context.UserUpdate(userUpdateModels);
+        return View();
+    }
 
 
 }
