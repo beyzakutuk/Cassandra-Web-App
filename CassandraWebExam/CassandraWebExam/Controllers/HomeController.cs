@@ -91,6 +91,16 @@ public class HomeController : Controller
         return View();
     }
 
-
+    [HttpGet]
+    public IActionResult Register()
+    {
+        return View();
+    }
+    [HttpPost]
+    public IActionResult Register(UserModel userModel)
+    {
+        _context.UserAdd(userModel);
+        return RedirectToAction("UserPanel");
+    }
 }
 
