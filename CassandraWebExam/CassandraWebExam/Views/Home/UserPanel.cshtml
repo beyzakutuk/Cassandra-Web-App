@@ -1,4 +1,4 @@
-﻿@model List<GetUsersModels>
+﻿@model (List<GetUsersModels>,int)
 
     <!DOCTYPE html>
     <html lang="en">
@@ -60,7 +60,7 @@
                     </tr>
                 </thead>
                 <tbody id="user-list">
-                    @foreach (var user in Model)
+                    @foreach (var user in Model.Item1)
                     {
                         <tr>
                             <td>@user.Id</td>
@@ -72,11 +72,19 @@
                     }
                 </tbody>
             </table>
+
+            <p>@Model.Item2 adet kayıt bulunmaktadır.</p>
+
         </div>
 
 
         <a href="https://localhost:7001/Home/UserAdd">Kullanici ekle</a>
 
         <a href="https://localhost:7001/Home/UserDelete">Kullanici sil</a>
+        <a href="https://localhost:7001/Home/UserUpdate">Kullanici yaş güncelle</a>
+        <a href="https://localhost:7001/Home/UserDelete">Yas Sorgusu</a>
+        <a href="https://localhost:7001/Home/UserDelete">Kullanici sil</a>
+
+
     </body>
 </html>

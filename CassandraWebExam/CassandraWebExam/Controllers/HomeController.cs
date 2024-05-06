@@ -36,9 +36,12 @@ public class HomeController : Controller
     public IActionResult UserPanel()
     {
         var response = _context.UserList();
+
+
+        (List<GetUsersModels>, int) tuple = (response, response.Count());
         if (response.Any())
         {
-            return View(response);
+            return View(tuple);
         }
         return View();
     }
@@ -59,7 +62,25 @@ public class HomeController : Controller
 
         return RedirectToAction("UserPanel");
     }
-   
+    [HttpGet]
+    public IActionResult UserDelete()
+    {
+        return View();
+    }
+    [HttpPost]
+    public IActionResult UserDelete(UserDeleteModel userDeleteModel)
+    {
+        var returnbool = _context.UserDelete(userDeleteModel);
+
+        if (returnbool)
+            return RedirectToAction("Login");
+
+        TempData["Fails"] = "bu kullanıcı yok";
+        return View();
+    }
+
+    
+
 
 }
 

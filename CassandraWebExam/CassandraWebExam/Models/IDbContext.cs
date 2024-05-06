@@ -7,6 +7,7 @@ namespace CassandraWebExam.Models
 		List<GetUsersModels> UserList();
 		bool UserAdd(UserModel userModel);
 		bool UserDelete(UserDeleteModel userDeleteModel);
+		bool UserUpdate(UserUpdateModels userUpdateModels);
 	}
 }
 

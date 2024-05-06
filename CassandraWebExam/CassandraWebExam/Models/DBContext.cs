@@ -75,6 +75,26 @@ namespace CassandraWebExam.Models
             return true;
         }
 
+        public bool UserDelete(UserDeleteModel userDeleteModel)
+        {
+
+            var selectStatement = new SimpleStatement("SELECT * FROM my_keyspace.users WHERE username = ? ALLOW FILTERING");
+
+
+            selectStatement.Bind(userDeleteModel.name);
+
+            var resultSet= _session.Execute(selectStatement);
+
+            Guid deletedUserId = resultSet.First().GetValue<Guid>("id");
+
+            var deleteStatement = new SimpleStatement("DELETE FROM my_keyspace.users WHERE id = ?");
+
+            deleteStatement.Bind(deletedUserId);
+
+            _session.Execute(deleteStatement);
+            return true;
+        }
+
        
     }
 }
