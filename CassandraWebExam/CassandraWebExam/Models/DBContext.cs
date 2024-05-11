@@ -56,11 +56,11 @@ namespace CassandraWebExam.Models
 
         public bool UserAdd(UserModel userModel)
         {
-            var resultprepare = _session.Prepare("SELECT * FROM my_keyspace.users WHERE username = ? ALLOW FILTERING");
+            var selectStatement = new SimpleStatement("SELECT * FROM my_keyspace.users WHERE username = ? ALLOW FILTERING");
 
-            var boundStatement = resultprepare.Bind(userModel.Name);
+            selectStatement.Bind(userModel.Name);
 
-            var rs = _session.Execute(boundStatement);
+            var rs = _session.Execute(selectStatement);
 
             var row = rs.FirstOrDefault();
 
@@ -85,7 +85,15 @@ namespace CassandraWebExam.Models
 
             var resultSet= _session.Execute(selectStatement);
 
-            Guid deletedUserId = resultSet.First().GetValue<Guid>("id");
+            var datas = resultSet.FirstOrDefault();
+
+            if(datas is null)
+            {
+                return false;
+            }
+
+           Guid deletedUserId= datas.GetValue<Guid>("id");
+
 
             var deleteStatement = new SimpleStatement("DELETE FROM my_keyspace.users WHERE id = ?");
 
@@ -104,10 +112,11 @@ namespace CassandraWebExam.Models
 
             var resultSet = _session.Execute(selectStatement);
 
+            Row? data= resultSet.FirstOrDefault();
 
-            Guid deletedUserId = resultSet.First().GetValue<Guid>("id");
-
-
+            if (data is null)
+                return false;
+            Guid deletedUserId = data.GetValue<Guid>("id");
 
             var updateStatement = new SimpleStatement("UPDATE my_keyspace.users SET age = ? WHERE id = ?");
 

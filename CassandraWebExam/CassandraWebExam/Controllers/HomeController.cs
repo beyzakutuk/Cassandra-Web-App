@@ -65,6 +65,8 @@ public class HomeController : Controller
     [HttpGet]
     public IActionResult UserDelete()
     {
+        TempData["Fails"] = null;
+        
         return View();
     }
     [HttpPost]

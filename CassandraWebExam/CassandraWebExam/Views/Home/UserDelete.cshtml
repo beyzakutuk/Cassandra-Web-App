@@ -6,6 +6,11 @@
     <label for="name">Kullanıcı adı giriniz:</label>
     <input type="text" name="name" id="name"/>
     <button>Sil</button>
+
+    @if(TempData["Fails"] is not null)
+{
+            <div class="text-danger">bu kullanıcı bulunmamaktadır</div>
+}
 </form>
 
 

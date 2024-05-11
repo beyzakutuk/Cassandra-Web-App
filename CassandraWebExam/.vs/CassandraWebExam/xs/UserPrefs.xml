@@ -1,23 +1,29 @@
 ﻿<Properties StartupConfiguration="{C58395A1-B558-41F4-A5CB-D154669ABA1D}|https">
-  <MonoDevelop.Ide.Workbench ActiveDocument="CassandraWebExam/Views/Home/UserPanel.cshtml">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="CassandraWebExam/Models/DBContext.cs">
     <Files>
-      <File FileName="CassandraWebExam/Models/DBContext.cs" />
-      <File FileName="CassandraWebExam/Controllers/HomeController.cs" />
-      <File FileName="CassandraWebExam/Views/Home/Login.cshtml" />
-      <File FileName="CassandraWebExam/Views/Home/UserAdd.cshtml" />
-      <File FileName="CassandraWebExam/Views/Home/Register.cshtml" />
-      <File FileName="CassandraWebExam/Views/Home/UserPanel.cshtml" Line="85" Column="69" />
+      <File FileName="CassandraWebExam/Program.cs" Line="13" Column="14" />
+      <File FileName="CassandraWebExam/Views/Home/UserPanel.cshtml" Line="106" Column="26" />
+      <File FileName="CassandraWebExam/Models/DBContext.cs" Line="117" Column="27" />
+      <File FileName="CassandraWebExam/Controllers/HomeController.cs" Line="68" Column="34" />
+      <File FileName="CassandraWebExam/Views/Home/UserDelete.cshtml" Line="12" Column="36" />
+      <File FileName="CassandraWebExam/Views/Home/Register.cshtml" Line="82" Column="32" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="CassandraWebExam" expanded="True">
             <Node name="CassandraWebExam">
-              <Node name="Models" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="DBContext.cs" selected="True" />
+              </Node>
               <Node name="Views" expanded="True">
-                <Node name="Home" expanded="True">
-                  <Node name="UserPanel.cshtml" selected="True" />
-                </Node>
+                <Node name="Home" expanded="True" />
               </Node>
             </Node>
           </Node>
@@ -25,13 +31,5 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/beyzakutuk/Desktop/Github/Cassandra-Web-App/CassandraWebExam/CassandraWebExam/Controllers/HomeController.cs" relfile="CassandraWebExam/Controllers/HomeController.cs" line="89" column="1" />
-    </BreakpointStore>
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.ItemProperties.CassandraWebExam PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
